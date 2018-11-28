@@ -50,7 +50,5 @@ app.use('/registro', registro);
 const pagamento = require('./routes/pagamento');
 app.use('/pagamento', pagamento);
 
-const item = require('./routes/item');
-app.use('/item', item);
 
 module.exports = app;

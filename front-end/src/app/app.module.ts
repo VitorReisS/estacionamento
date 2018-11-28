@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { ItemService } from './services/item.service';
 import { ClienteService } from './services/cliente.service';
 import { FuncionarioService } from './services/funcionario.service';
 import { PagamentoService } from './services/pagamento.service';
@@ -13,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ItemListComponent } from './item/item-list/item-list.component';
 import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
 import { PagamentoListComponent } from './pagamento/pagamento-list/pagamento-list.component';
@@ -50,7 +48,6 @@ import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { ItemFormComponent } from './item/item-form/item-form.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
 import { PagamentoFormComponent } from './pagamento/pagamento-form/pagamento-form.component';
@@ -63,8 +60,6 @@ registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
-    ItemListComponent,
-    ItemFormComponent,
     ClienteListComponent,
     ClienteFormComponent,
     FuncionarioListComponent,
@@ -102,7 +97,6 @@ registerLocaleData(localePt);
     /**********************************************/
   ],
   providers: [
-    ItemService,
     ClienteService,
     FuncionarioService,
     PagamentoService,
