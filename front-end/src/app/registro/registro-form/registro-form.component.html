@@ -11,7 +11,7 @@
       <mat-select placeholder="Seleciona o Veiculo" required
         name="veiculo" [(ngModel)]="registro.veiculo">
         <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo._id">
-          {{ veiculo.veiculo }}
+          {{ veiculo.placa_veicu }}
         </mat-option>
       </mat-select>
     </mat-form-field>

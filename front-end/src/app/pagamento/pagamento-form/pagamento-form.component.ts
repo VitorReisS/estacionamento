@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PagamentoService } from '../../services/pagamento.service';
+import { FuncionarioService } from '../../services/funcionario.service';
+import { VeiculoService } from '../../services/veiculo.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatSnackBar } from '@angular/material';
 
@@ -12,12 +14,16 @@ export class PagamentoFormComponent implements OnInit {
 
   constructor(
     private pagamentoSrv: PagamentoService,
+    private funcionarioSrv: FuncionarioService,
+    private veiculoSrv: VeiculoService,
     private router: Router,
     private actRoute: ActivatedRoute,
     private snackBar: MatSnackBar
   ) { }
 
   public pagamento: any = {};
+  public funcionarios: any = {};
+  public veiculos: any = {};
   public titulo: String = 'Novo Pagamento';
 
   ngOnInit() {
@@ -36,6 +42,22 @@ export class PagamentoFormComponent implements OnInit {
           );
         }
       }
+    );
+
+    this.funcionarioSrv.listar().subscribe(
+      dados => {
+        this.funcionarios = dados;
+        console.log(this.funcionarios);
+      },
+      erro => console.error(erro)
+    );
+
+    this.veiculoSrv.listar().subscribe(
+      dados => {
+        this.veiculos = dados;
+        console.log(this.veiculos);
+      },
+      erro => console.error(erro)
     );
 
   }
