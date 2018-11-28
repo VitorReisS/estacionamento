@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VeiculoService } from '../../services/veiculo.service';
+import { ClienteService } from '../../services/cliente.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
@@ -12,12 +13,14 @@ export class VeiculoFormComponent implements OnInit {
 
   constructor(
     private veiculoSrv: VeiculoService,
+    private clienteSrv: ClienteService,
     private router: Router,
     private actRoute: ActivatedRoute,
     private snackBar: MatSnackBar
   ) { }
 
   public veiculo: any = {};
+  public clientes: any = {};
   public titulo: String = 'Novo Veiculo';
 
   ngOnInit() {
@@ -36,6 +39,14 @@ export class VeiculoFormComponent implements OnInit {
           );
         }
       }
+    );
+
+    this.clienteSrv.listar().subscribe(
+      dados => {
+        this.clientes = dados;
+        console.log(this.clientes);
+      },
+      erro => console.error(erro)
     );
 
   }
