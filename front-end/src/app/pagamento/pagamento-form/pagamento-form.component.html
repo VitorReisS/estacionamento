@@ -1,0 +1,47 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Funcionario</mat-label>
+      <mat-select placeholder="Selecione o nome do Funcionario" required
+        name="funcionario" [(ngModel)]="pagamento.funcionario">
+        <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario._id">
+          {{ funcionario.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> 
+
+    <mat-form-field>
+      <mat-label>Veiculo</mat-label>
+      <mat-select placeholder="Selecione o Veiculo" required
+        name="veiculo" [(ngModel)]="pagamento.veiculo">
+        <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo._id">
+          {{ veiculo.descricao }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> 
+
+    <mat-form-field>
+      <mat-label>Data de Pagamento</mat-label>
+      <input  matInput [matDatepicker]="data_pagamento" placeholder="Insere a data de pagamento" required
+        name="data_pagamento" [(ngModel)]="pagamento.data_pagamento">
+      <mat-datepicker-toggle matSuffix [for]="data_pagamento"></mat-datepicker-toggle>
+      <mat-datepicker #data_pagamento></mat-datepicker>
+    </mat-form-field>
+
+    <mat-label>Pago?</mat-label>
+    <mat-checkbox required name="status" [(ngModel)]="pagamento.status"></mat-checkbox>
+
+  </form>
+
+</mat-card-content>
+
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

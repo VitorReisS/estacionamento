@@ -1,0 +1,54 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do cliente" required
+        name="nome" [(ngModel)]="cliente.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data de Nascimento</mat-label>
+      <input  matInput [matDatepicker]="data_nasci" placeholder="Insere a data de nascimento" required
+        name="data_nasci" [(ngModel)]="cliente.data_nasci">
+      <mat-datepicker-toggle matSuffix [for]="data_nasci"></mat-datepicker-toggle>
+      <mat-datepicker #data_nasci></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput placeholder="Informe o CPF" required
+        name="cpf" [(ngModel)]="cliente.cpf">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>RG</mat-label>
+      <input matInput placeholder="Informe o RG" required
+        name="rg" [(ngModel)]="cliente.rg">
+    </mat-form-field>    
+    
+    <mat-form-field>
+      <mat-label>Nome Rua</mat-label>
+      <input matInput placeholder="Informe o nome da rua onde você mora" required
+        name="nome_rua" [(ngModel)]="cliente.nome_rua">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Numero da Casa</mat-label>
+      <input matInput placeholder="Informe a o numero da casa onde você mora" required 
+        name="num_casa" [(ngModel)]="cliente.num_casa">
+    </mat-form-field>
+
+  </form>
+
+</mat-card-content>
+
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

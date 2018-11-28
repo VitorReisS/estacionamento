@@ -1,0 +1,38 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Cliente</mat-label>
+      <mat-select placeholder="Seleciona um Cliente" required
+        name="cliente" [(ngModel)]="veiculo.cliente">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+          {{ cliente.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo de Veiculo</mat-label>
+      <input matInput placeholder="Informe o tipo do Veiculo" required
+        name="tipo_veicu" [(ngModel)]="veiculo.tipo_veicu">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Placa do Veiculo</mat-label>
+      <input matInput placeholder="Informe a placa do Veiculo" required
+        name="placa_veicu" [(ngModel)]="veiculo.placa_veicu">
+    </mat-form-field>
+
+  </form>
+
+</mat-card-content>
+
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

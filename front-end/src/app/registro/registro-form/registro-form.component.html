@@ -1,0 +1,42 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Veiculo</mat-label>
+      <mat-select placeholder="Seleciona o Veiculo" required
+        name="veiculo" [(ngModel)]="registro.veiculo">
+        <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo._id">
+          {{ veiculo.veiculo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hora de Entrada</mat-label>
+      <input  matInput [matDatepicker]="hora_entrada" placeholder="Insere a data de entrada" required
+        name="hora_entrada" [(ngModel)]="registro.hora_entrada">
+      <mat-datepicker-toggle matSuffix [for]="hora_entrada"></mat-datepicker-toggle>
+      <mat-datepicker #hora_entrada></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hora de Saida</mat-label>
+      <input  matInput [matDatepicker]="hora_saida" placeholder="Insere a data de saida" required
+        name="hora_saida" [(ngModel)]="registro.hora_saida">
+      <mat-datepicker-toggle matSuffix [for]="hora_saida"></mat-datepicker-toggle>
+      <mat-datepicker #hora_saida></mat-datepicker>
+    </mat-form-field>
+
+  </form>
+
+</mat-card-content>
+
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

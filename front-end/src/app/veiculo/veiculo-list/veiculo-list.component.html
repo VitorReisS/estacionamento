@@ -1,0 +1,42 @@
+<mat-card-title>
+  Listagem de veiculos
+</mat-card-title>
+
+<mat-card-actions>
+  <a href="veiculo/novo" mat-flat-button color="accent">Novo veiculo</a>
+</mat-card-actions>
+
+<mat-card-content>
+  <table mat-table [dataSource]="veiculos">
+    <ng-container matColumnDef="cliente">
+      <th mat-header-cell *matHeaderCellDef>Cliente</th>
+      <td mat-cell *matCellDef="let veiculo">
+        <a [routerLink]="['/veiculo', veiculo._id]">
+          {{ veiculo.cliente }}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo_veicu">
+      <th mat-header-cell *matHeaderCellDef>Tipo de Veiculo</th>
+      <td mat-cell *matCellDef="let veiculo">{{ veiculo.tipo_veiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="placa_veicu">
+      <th mat-header-cell *matHeaderCellDef>Placa do veiculo</th>
+      <td mat-cell *matCellDef="let veiculo">{{ veiculo.placa_veicu }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef>Excluir?</th>
+      <td mat-cell *matCellDef="let veiculo">
+        <button mat-flat-button color="warn" (click)="excluir(veiculo._id)">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasVisiveis"></tr>
+    <tr mat-row *matRowDef="let linha; columns: colunasVisiveis"></tr>
+  </table>
+</mat-card-content>

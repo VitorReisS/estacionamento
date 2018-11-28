@@ -1,0 +1,42 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do funcionario" required
+        name="nome" [(ngModel)]="funcionario.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data de Nascimento</mat-label>
+      <input  matInput [matDatepicker]="data_nasci" placeholder="Insere a data de nascimento" required
+        name="data_nasci" [(ngModel)]="funcionario.data_nasci">
+      <mat-datepicker-toggle matSuffix [for]="data_nasci"></mat-datepicker-toggle>
+      <mat-datepicker #data_nasci></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput placeholder="Informe o CPF" required
+        name="cpf" [(ngModel)]="funcionario.cpf">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Informe o email" required 
+        name="email" [(ngModel)]="funcionario.email">
+    </mat-form-field>
+
+  </form>
+
+</mat-card-content>
+
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>
