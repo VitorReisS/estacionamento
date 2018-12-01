@@ -21,10 +21,14 @@ export class ClienteListComponent implements OnInit {
   public colunasVisiveis: string[] = [
     'nome',
     'data_nasci',
+    'celular',
     'cpf',
     'rg',
+    'cep',
     'nome_rua',
     'num_casa',
+    'bairro',
+    'cidade',
     'excluir'
   ];
 

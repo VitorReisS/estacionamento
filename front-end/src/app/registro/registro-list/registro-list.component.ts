@@ -20,7 +20,9 @@ export class RegistroListComponent implements OnInit {
 
   public colunasVisiveis: string[] = [
     'veiculo',
+    'data_entrada',
     'hora_entrada',
+    'data_saida',
     'hora_saida',
     'excluir'
   ];

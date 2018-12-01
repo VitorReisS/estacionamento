@@ -19,9 +19,9 @@ export class VeiculoListComponent implements OnInit {
   ) { }
 
   public colunasVisiveis: string[] = [
-    'cliente',
-    'tipo_veicu',
     'placa_veicu',
+    'tipo_veicu',
+    'cliente',
     'excluir'
   ];
 

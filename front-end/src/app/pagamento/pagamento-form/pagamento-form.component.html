@@ -37,20 +37,27 @@
     <mat-form-field>
       <mat-label>Valor</mat-label>
       <span matPrefix>R$ </span>
-      <input matInput placeholder="Informe o valor recibo" required
+      <input matInput placeholder="Informe o valor recibo Ex.: 10.00" required
         name="valor_pagamento" [(ngModel)]="pagamento.valor_pagamento">
     </mat-form-field>
 
+    <mat-form-field>
+      <mat-label>Tipo de Pagamento</mat-label>
+      <input matInput placeholder="Informe o tipo de pagamento" required
+        name="tipo_pagamento" [(ngModel)]="pagamento.tipo_pagamento">
+    </mat-form-field>
+
+    <!--
     <mat-form-field>
       <mat-label>Pago?</mat-label>
       <input matInput placeholder="Informe informe se foi pago EX:Pg" required
         name="status" [(ngModel)]="pagamento.status">
     </mat-form-field>
-    <!--
-    <mat-label>Pago?</mat-label>
-    <mat-checkbox required name="status" [(ngModel)]="pagamento.status"></mat-checkbox>
     -->
 
+    <mat-label>Pago?</mat-label>
+    <mat-checkbox required name="status" [(ngModel)]="pagamento.status"></mat-checkbox>
+    
   </form>
 
 </mat-card-content>

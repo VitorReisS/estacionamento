@@ -8,13 +8,19 @@ module.exports = function() {
             ref: 'Veiculo',
             required: true
         },
-        hora_entrada: {
+        data_entrada: {
             type: Date,
             required: true
         },
-        hora_saida: {
-            type: Date,
+        hora_entrada: {
+            type: String,
             required: true
+        },
+        data_saida: {
+            type: Date
+        },
+        hora_saida: {
+            type: String
         }
     });
 

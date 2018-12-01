@@ -11,11 +11,19 @@ module.exports = function() {
             type: Date,
             required: true
         },
+        celular: {
+            type: Number,
+            required: true
+        },
         cpf: {
             type: Number,
             required: true
         },
         rg: {
+            type: Number,
+            required: true
+        },
+        cep: {
             type: Number,
             required: true
         },
@@ -25,6 +33,14 @@ module.exports = function() {
         },
         num_casa: {
             type: Number,
+            required: true
+        },
+        bairro: {
+            type: String,
+            required: true
+        },
+        cidade: {
+            type: String,
             required: true
         }
     });

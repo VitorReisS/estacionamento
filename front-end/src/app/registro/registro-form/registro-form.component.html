@@ -17,19 +17,31 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Hora de Entrada</mat-label>
-      <input  matInput [matDatepicker]="hora_entrada" placeholder="Insere a data de entrada" required
-        name="hora_entrada" [(ngModel)]="registro.hora_entrada">
-      <mat-datepicker-toggle matSuffix [for]="hora_entrada"></mat-datepicker-toggle>
-      <mat-datepicker #hora_entrada></mat-datepicker>
+      <mat-label>Data de Entrada</mat-label>
+      <input  matInput [matDatepicker]="data_entrada" placeholder="Insere a data de entrada" required
+        name="data_entrada" [(ngModel)]="registro.data_entrada">
+      <mat-datepicker-toggle matSuffix [for]="data_entrada"></mat-datepicker-toggle>
+      <mat-datepicker #data_entrada></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Hora de Saida</mat-label>
-      <input  matInput [matDatepicker]="hora_saida" placeholder="Insere a data de saida" required
+      <mat-label>Hora de Entrada</mat-label>
+      <input matInput placeholder="Informe a hora de entrada Ex.: HH:mm" required
+        name="hora_entrada" [(ngModel)]="registro.hora_entrada">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data de Saida</mat-label>
+      <input  matInput [matDatepicker]="data_saida" placeholder="Insere a data de saida"
+        name="data_saida" [(ngModel)]="registro.data_saida">
+      <mat-datepicker-toggle matSuffix [for]="data_saida"></mat-datepicker-toggle>
+      <mat-datepicker #data_saida></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hora de saida</mat-label>
+      <input matInput placeholder="Informe a hora de saida Ex.: HH:mm"
         name="hora_saida" [(ngModel)]="registro.hora_saida">
-      <mat-datepicker-toggle matSuffix [for]="hora_saida"></mat-datepicker-toggle>
-      <mat-datepicker #hora_saida></mat-datepicker>
     </mat-form-field>
 
   </form>

@@ -35,18 +35,37 @@
       <td mat-cell *matCellDef="let pagamento">R$ {{ pagamento.valor_pagamento }}</td>
     </ng-container>
 
+    <!--
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>Pago?</th>
       <td mat-cell *matCellDef="let pagamento">{{ pagamento.status }}</td>
     </ng-container>
+    -->
+
+    <ng-container matColumnDef="tipo_pagamento">
+      <th mat-header-cell *matHeaderCellDef>Tipo de Pagamento</th>
+      <td mat-cell *matCellDef="let pagamento">R$ {{ pagamento.tipo_pagamento }}</td>
+    </ng-container>
+
     <!--
+    <ng-container matColumnDef="tipo_pagamento">
+      <th mat-header-cell *matHeaderCellDef>Tipo de pagamento</th>
+      <td mat-cell *matCellDef="let pagamento">
+        <mat-radio-group checked="{{ pagamento.tipo_pagamento ? 'radio' : ''}}" onclick="return false">
+          <mat-radio-button value="1">Dinheiro</mat-radio-button>
+          <mat-radio-button value="2">Credito</mat-radio-button>
+          <mat-radio-button value="3">Debito</mat-radio-button>
+        </mat-radio-group>
+      </td>
+    </ng-container>
+    -->
+    
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>Pago?</th>
       <td mat-cell *matCellDef="let pagamento">
         <mat-checkbox checked="{{ pagamento.status ? 'checked' : ''}}" onclick="return false"></mat-checkbox>
       </td>
     </ng-container>
-    -->
 
     <ng-container matColumnDef="excluir">
       <th mat-header-cell *matHeaderCellDef>Excluir?</th>

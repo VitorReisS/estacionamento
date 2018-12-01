@@ -7,13 +7,9 @@
   <form class="form-container">
 
     <mat-form-field>
-      <mat-label>Cliente</mat-label>
-      <mat-select placeholder="Seleciona um Cliente" required
-        name="cliente" [(ngModel)]="veiculo.cliente">
-        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
-          {{ cliente.nome }}
-        </mat-option>
-      </mat-select>
+      <mat-label>Placa do Veiculo</mat-label>
+      <input matInput placeholder="Informe a placa do Veiculo" required
+        name="placa_veicu" [(ngModel)]="veiculo.placa_veicu">
     </mat-form-field>
 
     <mat-form-field>
@@ -21,11 +17,15 @@
       <input matInput placeholder="Informe o tipo do Veiculo" required
         name="tipo_veicu" [(ngModel)]="veiculo.tipo_veicu">
     </mat-form-field>
-
+    
     <mat-form-field>
-      <mat-label>Placa do Veiculo</mat-label>
-      <input matInput placeholder="Informe a placa do Veiculo" required
-        name="placa_veicu" [(ngModel)]="veiculo.placa_veicu">
+      <mat-label>Cliente</mat-label>
+      <mat-select placeholder="Seleciona um Cliente"
+        name="cliente" [(ngModel)]="veiculo.cliente">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+          {{ cliente.nome }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
   </form>

@@ -23,6 +23,7 @@ export class PagamentoListComponent implements OnInit {
     'veiculo',
     'data_pagamento',
     'valor_pagamento',
+    'tipo_pagamento',
     'status',
     'excluir'
   ];

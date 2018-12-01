@@ -21,6 +21,10 @@ module.exports = function() {
             type: Number,
             required: true
         },
+        tipo_pagamento: {
+            type: String,
+            required: true
+        },
         status: {
             type: String,
             required: true
