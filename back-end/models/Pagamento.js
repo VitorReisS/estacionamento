@@ -17,6 +17,10 @@ module.exports = function() {
             type: Date,
             required: true
         },
+        valor_pagamento: {
+            type: Number,
+            required: true
+        },
         status: {
             type: String,
             required: true

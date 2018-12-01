@@ -19,7 +19,7 @@ module.exports = function() {
 
     controller.listar = function(req, res) {
 
-        Pagamento.find().populate('login').populate('veiculo').exec().then(
+        Pagamento.find().populate('funcionario').populate('veiculo').exec().then(
             function(pagamentos) {
                 res.json(pagamentos).end();
             },

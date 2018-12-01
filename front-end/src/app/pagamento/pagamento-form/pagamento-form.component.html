@@ -8,23 +8,23 @@
 
     <mat-form-field>
       <mat-label>Funcionario</mat-label>
-      <mat-select placeholder="Selecione o nome do Funcionario" required
+      <mat-select placeholder="Seleciona um funcionario" required
         name="funcionario" [(ngModel)]="pagamento.funcionario">
         <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario._id">
           {{ funcionario.nome }}
         </mat-option>
       </mat-select>
-    </mat-form-field> 
+    </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Veiculo</mat-label>
-      <mat-select placeholder="Selecione o Veiculo" required
-        name="veiculo" [(ngModel)]="pagamento.veiculo">
-        <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo._id">
-          {{ veiculo.placa_veicu }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field> 
+        <mat-label>Veiculo</mat-label>
+        <mat-select placeholder="Seleciona um veiculo" required
+          name="veiculo" [(ngModel)]="pagamento.veiculo">
+          <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo._id">
+            {{ veiculo.placa_veicu }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>Data de Pagamento</mat-label>
@@ -34,8 +34,22 @@
       <mat-datepicker #data_pagamento></mat-datepicker>
     </mat-form-field>
 
+    <mat-form-field>
+      <mat-label>Valor</mat-label>
+      <span matPrefix>R$ </span>
+      <input matInput placeholder="Informe o valor recibo" required
+        name="valor_pagamento" [(ngModel)]="pagamento.valor_pagamento">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Pago?</mat-label>
+      <input matInput placeholder="Informe informe se foi pago EX:Pg" required
+        name="status" [(ngModel)]="pagamento.status">
+    </mat-form-field>
+    <!--
     <mat-label>Pago?</mat-label>
     <mat-checkbox required name="status" [(ngModel)]="pagamento.status"></mat-checkbox>
+    -->
 
   </form>
 
