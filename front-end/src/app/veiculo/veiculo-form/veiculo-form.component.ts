@@ -20,10 +20,18 @@ export class VeiculoFormComponent implements OnInit {
   ) { }
 
   public veiculo: any = {};
-  public clientes: any = {};
+  public clientes: any = [];
   public titulo: String = 'Novo Veiculo';
 
+  progLan = [
+    { tipo_veicu: "Camionete" },
+    { tipo_veicu: "Carro" },
+    { tipo_veicu: "Moto" }
+  ];
+
   ngOnInit() {
+
+    console.log(this.progLan);
 
     this.actRoute.params.subscribe(
       params => {

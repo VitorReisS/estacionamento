@@ -20,7 +20,7 @@ export class RegistroFormComponent implements OnInit {
   ) { }
 
   public registro: any = {};
-  public veiculos: any = {};
+  public veiculos: any = [];
   public titulo: String = 'Novo Registro';
 
   ngOnInit() {

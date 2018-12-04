@@ -22,11 +22,20 @@ export class PagamentoFormComponent implements OnInit {
   ) { }
 
   public pagamento: any = {};
-  public funcionarios: any = {};
-  public veiculos: any = {};
+  public funcionarios: any = [];
+  public veiculos: any = [];
+  //selectedLanguage: any = {};
   public titulo: String = 'Novo Pagamento';
 
+  progLang = [
+    { tipo_pagamento: "Credito" },
+    { tipo_pagamento: "Debito" },
+    { tipo_pagamento: "Dinheiro" }
+  ];
+
   ngOnInit() {
+
+    console.log(this.progLang);
 
     this.actRoute.params.subscribe(
       params => {

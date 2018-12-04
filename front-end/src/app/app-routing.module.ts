@@ -18,10 +18,16 @@ const routes: Routes = [
     path: 'cliente', component: ClienteListComponent
   },
   {
+    path: 'cliente/novo', component: ClienteFormComponent
+  },
+  {
     path: 'cliente/:id', component: ClienteFormComponent
   },
   {
     path: 'funcionario', component: FuncionarioListComponent
+  },
+  {
+    path: 'funcionario/novo', component: FuncionarioFormComponent
   },
   {
     path: 'funcionario/:id', component: FuncionarioFormComponent
@@ -30,16 +36,25 @@ const routes: Routes = [
     path: 'pagamento', component: PagamentoListComponent
   },
   {
+    path: 'pagamento/novo', component: PagamentoFormComponent
+  },
+  {
     path: 'pagamento/:id', component: PagamentoFormComponent
   },
   {
     path: 'registro', component: RegistroListComponent
   },
   {
+    path: 'registro/novo', component: RegistroFormComponent
+  },
+  {
     path: 'registro/:id', component: RegistroFormComponent
   },
   {
     path: 'veiculo', component: VeiculoListComponent
+  },
+  {
+    path: 'veiculo/novo', component: VeiculoFormComponent
   },
   {
     path: 'veiculo/:id', component: VeiculoFormComponent

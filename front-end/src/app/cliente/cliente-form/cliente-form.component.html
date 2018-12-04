@@ -22,15 +22,15 @@
 
     <mat-form-field>
       <mat-label>Celular</mat-label>
-      <input matInput placeholder="Informe o numero do celular Ex.: (DDD) XXXXX-XXXX" required
+      <input matInput placeholder="Informe o numero do celular Ex.: XXXXX-XXXX" required
         name="celular" [(ngModel)]="cliente.celular">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>CPF</mat-label>
-      <input matInput #input maxlength="11" placeholder="Informe o CPF (Somente número)" required
+      <input matInput #input1 maxlength="11" placeholder="Informe o CPF (Somente número)" required
         name="cpf" [(ngModel)]="cliente.cpf">
-      <mat-hint align="end">{{input.value?.length || 0}}/11</mat-hint>
+      <mat-hint align="end">{{input1.value?.length || 0}}/11</mat-hint>
     </mat-form-field>
 
     <!--
@@ -42,16 +42,16 @@
 
     <mat-form-field>
       <mat-label>RG</mat-label>
-      <input matInput #input maxlength="9" placeholder="Informe o RG (Somente número)" required
+      <input matInput #input2 maxlength="9" placeholder="Informe o RG (Somente número)" required
         name="rg" [(ngModel)]="cliente.rg">
-      <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+      <mat-hint align="end">{{input2.value?.length || 0}}/9</mat-hint>
     </mat-form-field>    
     
     <mat-form-field>
       <mat-label>CEP</mat-label>
-      <input matInput #input maxlength="8" placeholder="Informe o CEP onde você mora (Somente número)" required
+      <input matInput #input3 maxlength="8" placeholder="Informe o CEP onde você mora (Somente número)" required
         name="cep" [(ngModel)]="cliente.cep">
-      <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+      <mat-hint align="end">{{input3.value?.length || 0}}/8</mat-hint>
     </mat-form-field>
 
     <mat-form-field>

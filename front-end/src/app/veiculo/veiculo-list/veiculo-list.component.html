@@ -24,7 +24,7 @@
 
     <ng-container matColumnDef="cliente">
       <th mat-header-cell *matHeaderCellDef>Cliente</th>
-      <td mat-cell *matCellDef="let veiculo">{{ veiculo.cliente.nome }}</td>
+      <td mat-cell *matCellDef="let veiculo">{{ veiculo.cliente?.nome }}</td>
     </ng-container>
 
     <ng-container matColumnDef="excluir">
